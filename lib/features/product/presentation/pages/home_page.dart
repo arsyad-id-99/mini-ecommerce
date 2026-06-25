@@ -50,7 +50,6 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-
           BlocBuilder<CartBloc, CartState>(
             builder: (context, state) {
               int cartItemCount = 0;
@@ -221,7 +220,7 @@ class _HomePageState extends State<HomePage> {
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               itemCount: 4,
-              itemBuilder: (_, _) => Padding(
+              itemBuilder: (_, index) => Padding(
                 padding: EdgeInsets.only(right: 12.w),
                 child: Shimmer.fromColors(
                   baseColor: Colors.grey[300]!,
@@ -260,7 +259,7 @@ class _HomePageState extends State<HomePage> {
                 crossAxisSpacing: 16.w,
                 childAspectRatio: 0.65,
               ),
-              itemBuilder: (_, _) => Shimmer.fromColors(
+              itemBuilder: (_, index) => Shimmer.fromColors(
                 baseColor: Colors.grey[300]!,
                 highlightColor: Colors.grey[100]!,
                 child: Container(
