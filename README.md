@@ -7,6 +7,18 @@ Aplikasi e-commerce sederhana yang dibangun menggunakan Flutter, berfokus pada s
 
 ---
 
+## Demo Account
+[Demo Account](https://dummyjson.com/users)
+```bash
+   username : emilys
+   password : emilyspass
+
+   username : michaelw
+   password : michaelwpass
+   ```
+
+---
+
 ## 📸 Screenshots
 
 | Home Page | Search Page | Cart Page | Profile Page |
