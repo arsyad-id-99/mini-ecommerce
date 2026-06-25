@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 abstract class AuthLocalDataSource {
@@ -14,6 +15,7 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
 
   @override
   Future<void> saveToken(String token) async {
+    debugPrint('Saving token: $token');
     await secureStorage.write(key: cachedTokenKey, value: token);
   }
 

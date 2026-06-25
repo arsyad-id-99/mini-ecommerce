@@ -39,14 +39,12 @@ class MyApp extends StatelessWidget {
                 primary: AppColors.primary,
               ),
               useMaterial3: true,
-
               appBarTheme: const AppBarTheme(
                 backgroundColor: Colors.white,
                 foregroundColor: Colors.black,
                 elevation: 1,
                 surfaceTintColor: Colors.transparent,
               ),
-
               elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primary,
@@ -54,10 +52,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-            home: BlocProvider(
-              create: (context) => di.sl<AuthBloc>(),
-              child: const SplashPage(),
-            ),
+            home: const SplashPage(),
           );
         },
       ),

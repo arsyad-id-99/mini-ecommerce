@@ -1,3 +1,6 @@
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+
 import '../../domain/entities/user_entity.dart';
 import '../../domain/repositories/auth_repository.dart';
 import '../datasources/auth_local_datasource.dart';
@@ -23,11 +26,20 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<UserEntity?> checkAuthStatus() async {
     final token = await localDataSource.getToken();
     if (token != null && token.isNotEmpty) {
+      debugPrint('Token found: $token');
       try {
-        final userModel = await remoteDataSource.getCurrentUser(token);
-        return userModel;
+        final user = await remoteDataSource.getCurrentUser(token);
+        debugPrint('User fetched successfully: ${user?.username}');
+        return user;
+      } on DioException catch (e) {
+        debugPrint(
+            'Error fetching user: ${e.response?.data['message'] ?? e.message}');
+        if (e.response?.statusCode == 401 || e.response?.statusCode == 403) {
+          await localDataSource.clearToken();
+        }
+        return null;
       } catch (e) {
-        await localDataSource.clearToken();
+        debugPrint('Unexpected error: $e');
         return null;
       }
     }

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../domain/repositories/auth_repository.dart';
 import 'auth_event.dart';
@@ -22,8 +23,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
       final user = await repository.checkAuthStatus();
       if (user != null) {
+        debugPrint('User is authenticated: ${user.username}');
         emit(AuthAuthenticated(user));
       } else {
+        debugPrint('User is not authenticated');
         emit(AuthUnauthenticated());
       }
     });

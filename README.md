@@ -2,7 +2,7 @@
 
 Aplikasi e-commerce sederhana yang dibangun menggunakan Flutter, berfokus pada skalabilitas, pemeliharaan (*maintainability*), dan *Clean Code*. Aplikasi ini mengonsumsi REST API dari [DummyJSON](https://dummyjson.com/) untuk mensimulasikan fungsionalitas e-commerce pada umumnya.
 
-[![Download APK](https://img.shields.io/badge/Download-APK-blue.svg?style=for-the-badge&logo=android)](link_apk_anda_disini)
+[![Download APK](https://img.shields.io/badge/Download-APK-blue.svg?style=for-the-badge&logo=android)](https://drive.google.com/file/d/1gYBXaz-y3Qb5XQtBSlTras6sVFJyjcQn/view?usp=sharing)
 [![Watch Demo](https://img.shields.io/badge/Watch-Demo_Video-red.svg?style=for-the-badge&logo=youtube)](link_video_anda_disini)
 
 ---

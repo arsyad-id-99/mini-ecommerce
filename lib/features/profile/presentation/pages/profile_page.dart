@@ -26,8 +26,10 @@ class ProfilePage extends StatelessWidget {
         builder: (context, state) {
           // Ambil data user dari state
           UserEntity? currentUser;
+          debugPrint('Current AuthState: $state');
           if (state is AuthAuthenticated) currentUser = state.user;
           if (state is AuthSuccess) currentUser = state.user;
+          debugPrint('Current user in ProfilePage: ${currentUser?.username}');
 
           // Jika ada data user (Terautentikasi)
           if (currentUser != null) {
