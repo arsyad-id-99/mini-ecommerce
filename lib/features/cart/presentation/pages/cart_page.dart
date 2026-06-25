@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mini_ecommerce/core/utils/app_colors.dart';
 
 import '../bloc/cart_bloc.dart';
 
@@ -172,7 +173,7 @@ class CartPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 15.sp,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+                    color: AppColors.primary,
                   ),
                 ),
                 SizedBox(height: 8.h),
@@ -192,11 +193,11 @@ class CartPage extends StatelessWidget {
                           InkWell(
                             onTap: () {
                               context.read<CartBloc>().add(
-                                UpdateCartQuantity(
-                                  productId: item.productId,
-                                  quantity: item.quantity - 1,
-                                ),
-                              );
+                                    UpdateCartQuantity(
+                                      productId: item.productId,
+                                      quantity: item.quantity - 1,
+                                    ),
+                                  );
                             },
                             child: Padding(
                               padding: EdgeInsets.all(4.w),
@@ -213,11 +214,11 @@ class CartPage extends StatelessWidget {
                           InkWell(
                             onTap: () {
                               context.read<CartBloc>().add(
-                                UpdateCartQuantity(
-                                  productId: item.productId,
-                                  quantity: item.quantity + 1,
-                                ),
-                              );
+                                    UpdateCartQuantity(
+                                      productId: item.productId,
+                                      quantity: item.quantity + 1,
+                                    ),
+                                  );
                             },
                             child: Padding(
                               padding: EdgeInsets.all(4.w),
@@ -237,8 +238,8 @@ class CartPage extends StatelessWidget {
                       ),
                       onPressed: () {
                         context.read<CartBloc>().add(
-                          RemoveFromCart(item.productId),
-                        );
+                              RemoveFromCart(item.productId),
+                            );
                       },
                       padding: EdgeInsets.zero,
                       constraints: const BoxConstraints(),
@@ -283,7 +284,7 @@ class CartPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+                    color: AppColors.primary,
                   ),
                 ),
               ],
@@ -293,7 +294,6 @@ class CartPage extends StatelessWidget {
                 // TODO: Implementasi fitur Checkout
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
                 padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 10.h),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.r),

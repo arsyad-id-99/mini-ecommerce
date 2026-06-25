@@ -1,6 +1,7 @@
 // lib/features/product/presentation/widgets/product_card.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/utils/app_colors.dart';
 import '../../domain/entities/product_entity.dart';
 
 class ProductCard extends StatelessWidget {
@@ -71,7 +72,6 @@ class ProductCard extends StatelessWidget {
               ],
             ),
           ),
-
           Padding(
             padding: EdgeInsets.all(10.w),
             child: Column(
@@ -87,7 +87,6 @@ class ProductCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 4.h),
-
                 Row(
                   children: [
                     Icon(Icons.star, color: Colors.amber, size: 14.w),
@@ -102,14 +101,13 @@ class ProductCard extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 6.h),
-
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
                       '\$${product.discountedPrice.toStringAsFixed(2)}',
                       style: TextStyle(
-                        color: Colors.blue[700],
+                        color: AppColors.primary,
                         fontWeight: FontWeight.bold,
                         fontSize: 15.sp,
                       ),
@@ -127,7 +125,6 @@ class ProductCard extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 10.h),
-
                 SizedBox(
                   width: double.infinity,
                   height: 32.h,
